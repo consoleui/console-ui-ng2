@@ -1,0 +1,31 @@
+$main-header-height: 50px;
+
+nav.navbar {
+    padding: 0;
+    height: $main-header-height;
+
+    ul.nav a {
+        padding-top: 0;
+        padding-bottom: 0;  
+        line-height: $main-header-height;
+    }
+}
+
+.logo {
+    display: block;
+    float: left;
+    text-align: center; 
+    font-size: 1.25rem;
+    line-height: $main-header-height;
+    text-decoration: none;
+
+    .logo-mini {
+        display: none;
+        width: 50px;
+    }
+
+    .logo-lg {
+        display: block;
+        width: 180px;
+    }
+}
