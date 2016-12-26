@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cui works!';
+  profile = {
+    name: 'zhangsan'
+  };
+
+  initProfile() {
+    this.profile.name = "lisi";
+  }
 }
