@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fixed-layout.component.scss']
 })
 export class FixedLayoutComponent implements OnInit {
-
+  isSidebarFold: boolean = false;
+  
   constructor() { }
 
   ngOnInit() {

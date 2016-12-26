@@ -1,0 +1,12 @@
+:host {
+    flex: 0 0 12rem;
+    overflow-y: hidden;
+
+    &.fold {
+        flex: 0 0 2.85rem;
+    }
+
+    &.unfold {
+        flex: 0 0 12rem;
+    }
+}
