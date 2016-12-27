@@ -1,0 +1,30 @@
+.dashboard-selection-main {
+    padding-top: 15px;
+
+    .dashboard-selection-left {
+        padding-right: 360px;
+    }
+
+    .dashboard-selection-right {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        width: 336px;
+    }
+}
+
+.card {
+    border: none;
+}
+
+.tuijian {
+    border: 1px solid transparent;
+
+    &:hover {
+        border: #336699 solid 1px;
+    }
+
+    &-a {
+        
+    }
+}

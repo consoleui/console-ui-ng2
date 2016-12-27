@@ -1,9 +1,10 @@
-$main-header-height: 2.85rem;
-$logo-icon-width: 2.85rem;
+$main-header-height: 3.125rem; //2.85rem;
+$logo-icon-width: 3.125rem;
 
 nav.navbar {
     padding: 0;
     height: $main-header-height;
+    font-size: 0.875rem;
 
     ul.nav a {
         padding-top: 0;
