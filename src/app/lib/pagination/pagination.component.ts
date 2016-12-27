@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
+import { CuiPagination } from './pagination.d';
+import { PaginationModel } from './pagination.model';
 
 @Component({
   selector: 'cui-pagination',
@@ -6,10 +9,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pagination.component.scss']
 })
 export class PaginationComponent implements OnInit {
+  @Input() pagination: PaginationModel;
+  @Output("paginationChange") paginationChange = new EventEmitter();
+  @Output("goto") goto = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+    //this.pagination = new PaginationModel(0, 0, 0);
   }
 
+  prev() {
+    if (this.pagination.hasPrefix()) {
+      this.pagination.page -= 1;
+    }
+    this.paginationChange.emit(this.pagination);
+    this.gotoPage();
+  }
+
+  next() {
+    if (this.pagination.hasNext()) {
+      this.pagination.page += 1;
+    }
+    this.paginationChange.emit(this.pagination);
+    this.gotoPage();
+  }
+
+  gotoPage() {
+    this.goto.emit(this.pagination.page);
+  }
 }

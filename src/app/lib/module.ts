@@ -6,13 +6,15 @@ import { PaginationModule } from './pagination/index';
 
 const CUI_MODULES = [
     CuiButtonModule,
-    CuiLayoutsModule
+    CuiLayoutsModule,
+    PaginationModule
 ];
 
 @NgModule({
     imports: [
         CuiButtonModule,
-        CuiLayoutsModule
+        CuiLayoutsModule,
+        PaginationModule
     ],
     exports: CUI_MODULES,
     declarations: [],

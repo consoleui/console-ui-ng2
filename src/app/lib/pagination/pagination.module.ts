@@ -2,12 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PaginationComponent } from './pagination.component';
+//simport { PaginationModel } from './pagination.model';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [PaginationComponent],
+  declarations: [PaginationComponent ],
   exports: [PaginationComponent]
 })
-export class CuiPaginationModule { }
+export class PaginationModule { }

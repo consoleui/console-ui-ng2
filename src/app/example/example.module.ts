@@ -10,6 +10,7 @@ import { DashboardModule } from './dashboard';
 import { ExampleRoutingModule } from './example.routing';
 
 import { ExampleComponent } from './example.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { ExampleComponent } from './example.component';
     DashboardModule
   ],
   declarations: [
-    ExampleComponent
+    ExampleComponent,
+    PaginationComponent
   ],
   bootstrap: [ExampleComponent]
 })
