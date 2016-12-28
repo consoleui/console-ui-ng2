@@ -1,4 +1,4 @@
-import { CuiPagination } from './pagination.d';
+import { CuiPagination } from './defs/api';
 
 export class PaginationModel implements CuiPagination {
     total: number;

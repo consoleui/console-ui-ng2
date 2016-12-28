@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { CuiPagination } from './pagination.d';
+import { CuiPagination } from './defs/api';
 import { PaginationModel } from './pagination.model';
 
 @Component({
@@ -9,7 +9,7 @@ import { PaginationModel } from './pagination.model';
   styleUrls: ['./pagination.component.scss']
 })
 export class PaginationComponent implements OnInit {
-  @Input() pagination: PaginationModel;
+  @Input() pagination: CuiPagination;
   @Output("paginationChange") paginationChange = new EventEmitter();
   @Output("goto") goto = new EventEmitter();
 

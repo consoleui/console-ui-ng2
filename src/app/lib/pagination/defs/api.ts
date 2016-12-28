@@ -1,5 +1,5 @@
 
-export declare class CuiPagination {
+export interface CuiPagination {
     total: number;
     page: number;
     size: number;
