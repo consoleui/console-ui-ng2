@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
+
+import { NavItem } from '../nav/defs/api';
 
 @Component({
   selector: 'cui-fixed-layout',
@@ -6,11 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./fixed-layout.component.scss']
 })
 export class FixedLayoutComponent implements OnInit {
+
   isSidebarFold: boolean = false;
-  
+  @Input() sideNavs: NavItem[];
+
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

@@ -6,6 +6,7 @@ import { FixedLayoutComponent } from './fixed-layout/fixed-layout.component';
 import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SidebarContainerComponent } from './sidebar-container/sidebar-container.component';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   imports: [
@@ -13,6 +14,6 @@ import { SidebarContainerComponent } from './sidebar-container/sidebar-container
     RouterModule
   ],
   exports: [FixedLayoutComponent],
-  declarations: [FixedLayoutComponent, HeaderComponent, SidebarComponent, SidebarContainerComponent]
+  declarations: [FixedLayoutComponent, HeaderComponent, SidebarComponent, SidebarContainerComponent, NavComponent]
 })
 export class CuiLayoutsModule { }

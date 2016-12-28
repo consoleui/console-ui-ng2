@@ -2,7 +2,9 @@
   <cui-header [(isSidebarFold)]="isSidebarFold"></cui-header>
   <cui-sidebar-container>
     <cui-sidebar [ngClass]="{fold: isSidebarFold, unfold: !isSidebarFold}" [isSidebarFold]="isSidebarFold">
-      <ul class="nav sidebar-nav">
+      <cui-nav [navs]="sideNavs"></cui-nav>
+
+      <ul class="nav sidebar-nav" hidden='true'>
         <li class="nav-item active">
           <a class="nav-link" href="#" [routerLink]="['/dashboard']"><i class="nav-icon fa fa-dashboard"></i> <span class="nav-text">仪表盘</span> <span class="sr-only">(current)</span></a>
         </li>
