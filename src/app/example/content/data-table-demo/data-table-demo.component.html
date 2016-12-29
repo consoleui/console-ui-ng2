@@ -4,7 +4,16 @@
 <p>
   data-table-demo works!
 </p>
-<div class="card card-block">
-  <cui-data-table [columns]="columns" [pagination]="pagination"></cui-data-table>
+<!--<div class="card card-block">-->
+  <cui-data-table [columns]="columns" [data]="datas" [pagination]="pagination">
+    <div class="table-before">
+      <form class="form-inline">
+        <div class="form-group">
+          <input type="text" name="keywords" value="" class="form-control">
+        </div>
+        <button type="button" class="btn btn-primary">搜索</button>
+      </form>
+    </div>
+  </cui-data-table>
   {{pagination.page}}
-</div>
+<!--</div>-->

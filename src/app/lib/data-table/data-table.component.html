@@ -1,15 +1,21 @@
+  <ng-content selector='.table-before'></ng-content>
 <table class="table">
   <thead>
     <tr>
-      <th *ngFor="let col of columns">{{col.title}}</th>
+      <th *ngFor="let col of columns">{{col.title | uppercase}}</th>
     </tr>
   </thead>
-  <tbody></tbody>
+  <tbody>
+    <tr *ngFor="let row of data">
+      <td *ngFor="let col of columns">
+        <div *ngIf="!!col.prop">{{row[col.prop]}}</div>
+      </td>
+    </tr>
+  </tbody>
   <tfoot>
     <tr>
-      <td>
-      
-      <cui-pagination *ngIf="pagination" [pagination]="pagination" (goto)="fireReload()"></cui-pagination>
+      <td [attr.colspan]='columns.length'>
+        <cui-pagination class="pull-right" *ngIf="pagination" [pagination]="pagination" (goto)="fireReload()"></cui-pagination>
       </td>
     </tr>
   </tfoot>
