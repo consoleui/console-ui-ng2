@@ -5,11 +5,11 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  //font-size: 100%;
+  //font-size: 75%;
 }
 
 body {
-    font-size: 0.75rem;
+    //font-size: 0.75rem;
     font-family: "\5FAE\8F6F\96C5\9ED1","Microsoft Yahei","Hiragino Sans GB",tahoma,arial,"\5B8B\4F53";
 }
 
@@ -20,12 +20,12 @@ cui-fixed-layout {
 }
 
 cui-header {
-  height: 3.125rem;
+  height: 4rem;
 }
 
 cui-sidebar-container {
   position: absolute;
-  top: 3.125rem;
+  top: 4rem;
   left: 0;
   right: 0;
   bottom: 0;
@@ -35,24 +35,24 @@ cui-sidebar-container {
   .nav-item {
     .nav-title,
     .nav-link {
-      line-height: 2.5 rem;
+      line-height: 3.25 rem;
       display: block;
       border-bottom: 1px #222 solid;
       color: #ddeeee;
-      font-size: .75rem;
+      font-size: 1rem;
 
       .nav-icon {
-        width: 3.125rem;
+        width: 4rem;
         text-align: center;
-        font-size: 1rem;
-        line-height: 2.5rem;
+        font-size: 1.5rem;
+        line-height: 3.25rem;
 
         &.fa-caret {
-                font-size: .75rem;
+                font-size: 1rem;
             }
       }
       .nav-text {
-          line-height: 2.5rem;
+          line-height: 3.25rem;
       }
     }
 
@@ -96,16 +96,16 @@ cui-sidebar-container {
 
 
 .console-title {
-    padding: 0.5rem 0 0.3rem 0;
+    padding: 0.75rem 0 0.5rem 0;
 
     h1, h2, h3, h4, h5, h6 {
-        font-size: 0.875rem;
+        font-size: 1.166666rem;
         font-weight: normal;
-        border-left: 0.15rem solid green;
-        line-height: 1rem;
+        border-left: 0.2rem solid green;
+        line-height: 1.5rem;
         display: inline-block;
-        margin: 0.5rem 0;
-        padding-left: 0.5rem;
+        margin: 0.75rem 0;
+        padding-left: 0.75rem;
         vertical-align: middle;
     }
 
@@ -119,7 +119,7 @@ cui-sidebar-container {
     border: none;
 }
 .no-padding {
-        padding: 0;
+        padding: 0 !important;
     }
 .inline-blick{
     display: inline-block;
@@ -128,14 +128,14 @@ cui-sidebar-container {
 // tables
 .table {
     background: #FFF;
-    font-size: .75rem;
+    font-size: 1rem;
     border-top: 1px solid #e1e6eb;
-    margin-top: .5rem;
+    margin-top: .75rem;
     border: 1px solid #e1e6eb;
 }
 
 .table thead tr th {
-    padding: .5rem .5rem;
+    padding: .75rem .75rem;
     font-weight: normal;
     color: #999;
     border-bottom: 1px solid #e1e6eb;
@@ -143,14 +143,14 @@ cui-sidebar-container {
 }
 
 .table tbody tr td {
-    padding: .625rem .5rem;
+    padding: .9rem .75rem;
     border-top: 0px;
     border-bottom: 1px solid #e1e6eb;
     vertical-align: middle;
 }
 
 .table tfoot tr td {
-    padding: .625rem .5rem;
+    padding: 1rem .75rem;
     border-bottom: 1px solid #e1e6eb;
     vertical-align: middle;
     background-color: rgba($color: #F5F6FA, $alpha: 0.2);
@@ -160,16 +160,26 @@ cui-sidebar-container {
     .search-bar{
         display: inline-block;
 
-        .search-input-text{
-            min-width: 180px;
+        .search-input-text, input.form-control{
+            min-width: 15rem;
         }
     }
+
+    input.form-control{
+            min-width: 15rem;
+        }
 }
 
-.pagination {
-    &-datatables {
+.datatables-pagination {
+    height: 2.5rem;
+    //overflow: hidden;
+    .pagination {
+        padding: 0;
+        margin: 0;
+        line-height: 1.25rem;
+
         li {
-            //display: inline-block;
+            display: inline;
             //position: relative;
             //float: left;
             //margin-left: -1px;
@@ -177,7 +187,7 @@ cui-sidebar-container {
         li > a, li > span {
             float: left;
             position: relative;
-            padding: 0.5rem 0.75rem;
+            padding: 0.5rem .75rem;
             margin-left: -1px;
             color: #20a8d8;
             text-decoration: none;
@@ -195,7 +205,11 @@ cui-sidebar-container {
 
         li > span > select, li > span > input{
             border: none;
-            padding: 0.5rem 0.2rem;//0.75rem;
+            height: 2.25rem;
+            padding: 0.5rem 0.3rem;//0.75rem;
+        }
+        li > span > input{
+            text-align: center;
         }
     }
 }

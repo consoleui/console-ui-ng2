@@ -14,7 +14,7 @@ export class PaginationModel implements CuiPagination {
         this.page = page;
         this.content = content;
 
-        this._totalPage = total && size ? total / size + (total % size > 0 ? 1 : 0) : 0;
+        this._totalPage = total && size ? Math.floor(total / size) + (total % size > 0 ? 1 : 0) : 0;
     }
     
     totalPage(): number {

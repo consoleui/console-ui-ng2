@@ -11,6 +11,7 @@ export class DataTableDemoComponent implements OnInit {
   columns;
   datas;
   pagination: PaginationModel;
+  showMixSearch: boolean = false;
 
   constructor() { 
   }
@@ -20,8 +21,7 @@ export class DataTableDemoComponent implements OnInit {
       {title: 'ID', prop: 'id'},
       {title: 'TITLE', prop: 'title'},
       {title: 'Views', prop: 'views'},
-      {title: 'Comments', prop: 'comments'},
-      {title: 'Actions'}
+      {title: 'Comments', prop: 'comments'}
     ];
 
     this.datas = [
@@ -34,6 +34,12 @@ export class DataTableDemoComponent implements OnInit {
     ];
 
     this.pagination = new PaginationModel(95, 10, 5);
+  }
+
+  reload() {
+    this.datas.forEach((record, index, datas) => {
+      record.id  = record.id + 100;
+    });
   }
 
 }

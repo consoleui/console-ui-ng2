@@ -1,0 +1,103 @@
+$main-header-height: 3.125rem; //2.85rem;
+$logo-icon-width: 3.125rem;
+
+cui-sidebar-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
+
+    .cui-content-main {
+        flex: 1;
+
+        background: #fcfcfc;
+        //background: #eceeee;
+    }
+}
+
+cui-sidebar {
+    background: #333;
+
+    flex: 0 0 12rem;
+    overflow-y: hidden;
+
+    &.fold {
+        flex: 0 0 3.125rem;
+    }
+
+    &.unfold {
+        flex: 0 0 12rem;
+    }
+}
+
+nav.navbar {
+    padding: 0;
+    height: $main-header-height;
+    font-size: 0.875rem;
+
+    ul.nav a {
+        padding-top: 0;
+        padding-bottom: 0;  
+        line-height: $main-header-height;
+    }
+}
+
+.logo {
+    display: block;
+    float: left;
+    text-align: center; 
+    font-size: 1.25rem;
+    line-height: $main-header-height;
+    text-decoration: none;
+
+    .logo-mini {
+        display: inline-block;
+        background: rgba($color: #999, $alpha: .2);
+        width: $logo-icon-width;
+    }
+
+    .logo-lg {
+        display: inline-block;
+        //width: 180px;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+.sidebar-handler {
+    color: #999;
+    padding: 0 0.5rem;
+
+    &:hover {
+        color: #666;
+    }
+}
+
+.btn-icon {
+    padding: 0.5rem;
+}
+
+.btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {
+    outline: none;//5px auto -webkit-focus-ring-color;
+    outline-offset: none;//-2px;
+}
+
+.form-control[readonly] {
+    background-color: #fcfcfc;
+    opacity: 1;
+}
+
+.cui-content-main{
+    position: relative;
+
+    .main-content-inner {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+

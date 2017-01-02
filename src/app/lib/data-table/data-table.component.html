@@ -1,21 +1,35 @@
-  <ng-content selector='.table-before'></ng-content>
+<ng-content select='.table-before'></ng-content>
 <table class="table">
   <thead>
     <tr>
+      <th *ngIf="!!selectType" style="width: 40px;">
+        <input type="{{selectType}}" name="toggleSelect" value=""/>
+      </th>
       <th *ngFor="let col of columns">{{col.title | uppercase}}</th>
+      <th *ngIf="!!rowActions" class="text-xs-right">ACTIONS</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let row of data">
+      <td *ngIf="!!selectType">
+        <input type="{{selectType}}" name="ids" value="{{row['id']}}"/>
+      </td>
       <td *ngFor="let col of columns">
         <div *ngIf="!!col.prop">{{row[col.prop]}}</div>
+      </td>
+      <td class="text-xs-right" *ngIf="!!rowActions">
+        <template [ngTemplateOutlet]="rowActions" [ngOutletContext]="{row: row}"></template>
       </td>
     </tr>
   </tbody>
   <tfoot>
     <tr>
-      <td [attr.colspan]='columns.length'>
-        <cui-pagination class="pull-right" *ngIf="pagination" [pagination]="pagination" (goto)="fireReload()"></cui-pagination>
+      <td *ngIf="!!selectType">
+        <input type="{{selectType}}" name="toggleSelect" value=""/>
+      </td>
+      <td [attr.colspan]='columns.length + (!!rowActions ? 1 : 0)' style="vertical-align: middle;">
+        <ng-content select=".action-group"></ng-content>
+        <cui-pagination class="pull-right datatables-pagination" *ngIf="pagination" [pagination]="pagination" (goto)="fireReload()"></cui-pagination>
       </td>
     </tr>
   </tfoot>

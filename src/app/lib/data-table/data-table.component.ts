@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ContentChild, TemplateRef } from '@angular/core';
 
 import { CuiPagination } from '../pagination';
 
@@ -13,8 +13,11 @@ export class DataTableComponent implements OnInit {
   @Input() columns: Column[];
   @Input() data: any[];
   @Input() pagination: CuiPagination;
+  @Input() selectType?: string;
   //input, Output searchForm
   @Output() reload = new EventEmitter();
+
+  @ContentChild("rowActions") rowActions: TemplateRef<any>;
 
   constructor() { }
 

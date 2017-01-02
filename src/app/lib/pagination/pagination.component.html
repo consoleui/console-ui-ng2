@@ -1,5 +1,23 @@
-total: {{pagination.total}},
-size: {{pagination.size}},
-page: {{pagination.page}}
-<a href="javascript:void(0)" (click)="prev()">Prev</a>
-<a href="javascript:void(0)" (click)="next()">Next</a>
+<ul class="pagination">
+  <li><span>第{{pagination.page}}页/共{{pagination.totalPage()}}页</span></li>
+  <li><span class="no-padding"><input type="text" size="5" class="text-center" placeholder="页码"></span></li>
+  <li><a class="text-success" href="#">跳转</a></li>
+  <li><a href="javascript:void(0)">首页</a></li>
+  <li><a href="javascript:void(0)" (click)="prev()">上一页</a></li>
+  <li><a href="javascript:void(0)" (click)="next()">下一页</a></li>
+  <li><a href="javascript:void(0)">末页</a></li>
+  <li><span>共{{pagination.total}}条</span></li>
+  <li>
+    <span class="no-padding">
+      <select>
+        <option [selected]="10 == pagination.size">10</option>
+        <option [selected]="20 == pagination.size">20</option>
+        <option [selected]="50 == pagination.size">50</option>
+        <option [selected]="100 == pagination.size">100</option>
+        <option [selected]="500 == pagination.size">500</option>
+        <option [selected]="1000 == pagination.size">1000</option>
+      </select>
+    </span>
+    <span>条/页</span>
+  </li>
+</ul>

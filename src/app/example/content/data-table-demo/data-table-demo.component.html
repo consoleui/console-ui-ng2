@@ -1,18 +1,77 @@
 <div class="console-title console-title-border">
   <h5>Data Tables</h5>
+  <div class="pull-right" style="margin-top: 0.25rem;">
+    <button class="btn btn-secondary"><i class="fa fa-refresh"></i> 刷新</button>
+    <button class="btn btn-primary"><i class="fa fa-plus"></i> 创建数据项</button>
+  </div>
 </div>
-<p>
+
+<p class="alert alert-info" style="margin-top: .75rem;">
   data-table-demo works!
 </p>
 <!--<div class="card card-block">-->
-  <cui-data-table [columns]="columns" [data]="datas" [pagination]="pagination">
+  <cui-data-table [columns]="columns" [data]="datas" [pagination]="pagination" selectType="checkbox" (reload)="reload()">
     <div class="table-before">
+      <div class="card card-block" [hidden]="!showMixSearch">
+        <form class="">
+          <div class="form-group row">
+            <label for="" class="col-lg-1 col-form-label">标题</label>
+            <div class="col-lg-3">
+              <input type="text" class="form-control">
+            </div>
+            
+            <label for="" class="col-lg-1 col-form-label">标题</label>
+            <div class="col-lg-3">
+              <input type="text" class="form-control">
+            </div>
+            
+            <label for="" class="col-lg-1 col-form-label">标题</label>
+            <div class="col-lg-3">
+              <input type="text" class="form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-lg-1 col-form-label">标题</label>
+            <div class="col-lg-3">
+              <input type="text" class="form-control">
+            </div>
+            
+            <label for="" class="col-lg-1 col-form-label">标题</label>
+            <div class="col-lg-3">
+              <input type="text" class="form-control">
+            </div>
+            
+            <label for="" class="col-lg-1 col-form-label">标题</label>
+            <div class="col-lg-3">
+              <input type="text" class="form-control">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="pull-right">
+        <button class="btn btn-secondary btn-icon"><i class="fa fa-download fa-lg"></i></button>
+        <button class="btn btn-secondary btn-icon"><i class="fa fa-cog fa-lg"></i></button>
+      </div>
       <form class="form-inline">
         <div class="form-group">
           <input type="text" name="keywords" value="" class="form-control">
         </div>
         <button type="button" class="btn btn-primary">搜索</button>
+        <button type="button" class="btn btn-link" (click)="showMixSearch = !showMixSearch">高级筛选</button>
       </form>
+    </div>
+
+    <template #rowActions let-row="row">
+      <a href="#" class="text-primary">编辑</a>
+      <span>|</span>
+      <a href="#" class="text-danger">删除</a>
+    </template>
+
+    <div class="action-group pull-left">
+      <button class="btn btn-secondary">批量操作</button>
+      <button class="btn btn-danger">批量删除</button>
+      <button class="btn btn-success">设为发布</button>
+      <button class="btn btn-warning">取消发布</button>
     </div>
   </cui-data-table>
   {{pagination.page}}

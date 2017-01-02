@@ -1,10 +1,10 @@
-$main-header-height: 3.125rem; //2.85rem;
-$logo-icon-width: 3.125rem;
+$main-header-height: 4rem; //2.85rem;
+$logo-icon-width: 4rem;
 
 nav.navbar {
     padding: 0;
     height: $main-header-height;
-    font-size: 0.875rem;
+    font-size: 1.166666rem;
 
     ul.nav a {
         padding-top: 0;
@@ -30,14 +30,14 @@ nav.navbar {
     .logo-lg {
         display: inline-block;
         //width: 180px;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
     }
 }
 
 .sidebar-handler {
     color: #999;
-    padding: 0 0.5rem;
+    padding: 0 0.75rem;
 
     &:hover {
         color: #666;
