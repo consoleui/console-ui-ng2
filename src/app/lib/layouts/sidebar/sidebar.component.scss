@@ -1,6 +1,7 @@
 :host {
     flex: 0 0 15rem;
     overflow-y: hidden;
+    transition: all .3s;
 
     &.fold {
         flex: 0 0 4rem;
