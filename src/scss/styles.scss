@@ -35,11 +35,12 @@ cui-sidebar-container {
   .nav-item {
     .nav-title,
     .nav-link {
-      line-height: 3.25 rem;
+      line-height: 3.25rem;
       display: block;
       border-bottom: 1px #222 solid;
       color: #ddeeee;
       font-size: 1rem;
+      white-space: nowrap;
 
       .nav-icon {
         width: 4rem;
