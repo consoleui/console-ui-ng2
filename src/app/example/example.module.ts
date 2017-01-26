@@ -4,6 +4,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
+//import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+//import { ExampleMockData } from './mock';
+import './mock-data';
+
 import { CuiModule } from '../lib';
 import { DashboardModule } from './dashboard';
 
@@ -18,6 +22,8 @@ import { PaginationComponent } from './pagination/pagination.component';
     FormsModule,
     HttpModule,
     RouterModule,
+
+    //InMemoryWebApiModule.forRoot(ExampleMockData),
 
     ExampleRoutingModule,
     
