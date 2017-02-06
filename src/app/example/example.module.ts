@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+//import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -18,7 +18,7 @@ import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   imports: [
-    BrowserModule,
+    //BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule,

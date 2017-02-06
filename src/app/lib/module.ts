@@ -4,12 +4,14 @@ import { CuiButtonModule }   from './button/index';
 import { CuiLayoutsModule } from './layouts/index';
 import { PaginationModule } from './pagination/index';
 import { DataTableModule } from './data-table/index';
+import { TreeModule } from './tree/index';
 
 const CUI_MODULES = [
     CuiButtonModule,
     CuiLayoutsModule,
     PaginationModule,
-    DataTableModule
+    DataTableModule,
+    TreeModule
 ];
 
 @NgModule({
@@ -17,9 +19,12 @@ const CUI_MODULES = [
         CuiButtonModule,
         CuiLayoutsModule,
         PaginationModule,
-        DataTableModule
+        DataTableModule,
+        TreeModule
     ],
-    exports: CUI_MODULES,
+    exports: [
+        ...CUI_MODULES
+    ],
     declarations: [],
     providers: [],
 })

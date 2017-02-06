@@ -1,0 +1,27 @@
+<div class="console-title console-title-border">
+  <h5>分类管理</h5>
+  <div class="pull-right" style="margin-top: 0.25rem;">
+    <button class="btn btn-secondary"><i class="fa fa-refresh"></i> 刷新</button>
+  </div>
+</div>
+
+<div class="row" style="margin-top: 0.75rem;">
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-header">
+        分类树
+      </div>
+      <div class="card-block">
+        <button type="button" (click)="addNode(cateTree)">add</button>
+      </div>
+      <div class="card-block">
+        <cui-tree #cateTree [nodes]="nodes" [options]="treeOptions" (onActivate)="onActivate($event)"></cui-tree>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <div class="card card-block">
+      <cms-category-detail [category]="selectedNode"></cms-category-detail>
+    </div>
+  </div>
+</div>

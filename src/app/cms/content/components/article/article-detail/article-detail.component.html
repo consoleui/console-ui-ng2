@@ -1,0 +1,87 @@
+<div class="console-title console-title-border">
+  <h5>发表文章</h5>
+  <div class="pull-right" style="margin-top: 0.25rem;">
+    <button class="btn btn-secondary" [routerLink]="['/cms/content/article/list']"><i class="fa fa-reply"></i> 返回列表</button>
+  </div>
+</div>
+
+<div class="article-form" style='margin-top: 0.75rem;'>
+  <form>
+    <div class="row">
+      <div class="col-sm-8 col-lg-9">
+        <div class="card">
+          <div class="card-header">编辑文章</div>
+          <div class="card-block">
+            <div class="form-group">
+              <label for="title">标题</label>
+              <input type="text" class="form-control" id="title" name="title" [(ngModel)]="article.title" aria-describedby="titleHelp" placeholder="请输入文章标题">
+              <small id="titleHelp" class="form-text text-muted">文章标题编辑帮助提示</small>
+            </div>
+            <div class="form-group">
+              <label for="alias">标题别名</label>
+              <input type="text" class="form-control" id="alias" name="alias" [(ngModel)]="article.alias" aria-describedby="aliasHelp" placeholder="请输入文章标题别名">
+              <small id="aliasHelp" class="form-text text-muted">别名只能是英文字符</small>
+            </div>
+            <div class="form-group">
+              <label for="content">文章内容</label>
+              <textarea class="form-control" id="content" name="content" [(ngModel)]="article.content" aria-describedby="contentHelp" placeholder="请输入文章内容" rows="18"></textarea>
+              <small id="contentHelp" class="form-text text-muted">文章内容</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">评论</div>
+          <div class="card-block">
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4  col-lg-3">
+        <div class="card">
+          <div class="card-header">发布状态</div>
+          <div class="card-block">
+            <div class="form-group">
+              <span class="text-inline">当前状态：</span> <span>{{article.status}}</span>
+            </div>
+            <div class="form-group">
+              <label>上次保存：2016-12-20</label>
+            </div>
+
+            <button type="button" class="btn btn-success" (click)="save()">发表</button>
+            <button type="button" class="btn btn-info" (click)="saveAndNext()">保存并添加下一条</button>
+            <button type="button" class="btn btn-danger" (click)="delete()">删除</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">缩略图</div>
+          <div class="card-block">
+            <img src="/assets/images/unix_01.jpg" alt="" style="width: 100%; min-height: 120px; max-height: 200px;">
+            
+            <input type="file" name="" value="">
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">所属分类</div>
+          <div class="card-block">
+            
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">标签</div>
+          <div class="card-block">
+            <div class="form-group">
+              <label for="tags" class="sr-only">标签</label>
+              <input type="text" class="form-control" id="tags" name="tags" [(ngModel)]="article.tags" aria-describedby="tagsHelp" placeholder="请输入标签">
+              <small id="tagsHelp" class="form-text text-muted">用英文逗号或分号隔开</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

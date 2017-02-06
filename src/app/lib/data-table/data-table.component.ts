@@ -16,6 +16,9 @@ export class DataTableComponent implements OnInit {
   @Input() selectType?: string;
   //input, Output searchForm
   @Output() reload = new EventEmitter();
+  @Output() select = new EventEmitter();
+  isSelectAll: boolean = false;
+  ids = [];
 
   @ContentChild("rowActions") rowActions: TemplateRef<any>;
 
@@ -27,4 +30,39 @@ export class DataTableComponent implements OnInit {
   fireReload() {
     this.reload.emit(this.pagination);
   }
+
+  selectAll() {
+    this.isSelectAll = !this.isSelectAll;
+    if(!this.isSelectAll){
+      this.ids = [];
+    }else{
+      this.ids = [];
+      this.data.forEach((row, index, arr) => {
+        this.ids.push(row.id);
+      });
+    }
+
+    this.select.emit(this.ids);
+  }
+
+  selectItem(id, checked) {
+    let ids = [];
+    this.ids.forEach((val) => {
+      if(val!=id){
+        let d = this.data.filter((x) => {
+          return x['id'] == val;
+        });
+        if(d.length > 0){
+          ids.push(val);
+        }
+      }
+    });
+    if(checked){
+      ids.push(id);
+    }
+    this.ids = ids;
+
+    this.select.emit(this.ids);
+  }
+
 }
