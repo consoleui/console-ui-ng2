@@ -1,4 +1,4 @@
-<ul class="nav sidebar-nav">
+<ul class="nav sidebar-nav flex-column">
   <li class="nav-item" *ngFor="let nav of navs" [ngClass]="{'nav-dropdown': !!nav.children, 'opened': nav.isExpanded}">
     <a href="javascript:void(0);" class="nav-link" *ngIf="!nav.children" [routerLink]="[nav.link]"><i class="nav-icon fa fa-{{nav.icon}}"></i><span class="nav-text">{{nav.text}}</span></a>
     <a href="javascript:void(0);" class="nav-link nav-dropdown-toggle" *ngIf="!!nav.children" (click)="nav.isExpanded = !nav.isExpanded"><i class="nav-icon fa fa-{{nav.icon}}"></i><span class="nav-text">{{nav.text}}</span></a>

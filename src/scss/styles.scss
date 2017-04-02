@@ -6,6 +6,7 @@ body {
   height: 100%;
   overflow: hidden;
   //font-size: 75%;
+  font-size: .75rem;
 }
 
 body {
@@ -41,6 +42,7 @@ cui-sidebar-container {
       color: #ddeeee;
       font-size: 1rem;
       white-space: nowrap;
+      padding: 0;
 
       .nav-icon {
         width: 4rem;
