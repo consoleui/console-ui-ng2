@@ -2,12 +2,59 @@
     flex: 0 0 15rem;
     overflow-y: hidden;
     transition: all .3s;
+    overflow: hidden;
+    //position: relative;
 
     &.fold {
         flex: 0 0 4rem;
+
+        .inner-container {
+            width: 5rem;
+        }
     }
 
     &.unfold {
         flex: 0 0 15rem;
+
+        .inner-container {
+            width: 16rem;
+        }
     }
+
+    .inner-container {
+        overflow-x: hidden;
+        overflow-y: scroll;
+
+        //position: absolute;
+        // top: 0;
+        // bottom: 0;
+        // left: 0;
+        // right: -1rem;
+
+        height: 100%;
+    }
+
+    
+
+    /*&::-webkit-scrollbar-track
+    {
+        box-shadow: inset 0 0 .5rem rgba(0,0,0,0.3);
+        background-color: #F5F5F5;
+    }
+
+    &::scrollbar{
+        width: 0;
+    }
+
+    &::-webkit-scrollbar
+    {
+        width: 0.5rem;
+        background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar-thumb
+    {
+        background-color: #000000;
+        border: .15rem solid #555555;
+    }*/
 }

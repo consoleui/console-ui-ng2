@@ -1,12 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
+html {
+    font-size: .75rem;
+}
 html,
 body {
   width: 100%;
   height: 100%;
   overflow: hidden;
   //font-size: 75%;
-  font-size: .75rem;
 }
 
 body {
@@ -215,4 +217,8 @@ cui-sidebar-container {
             text-align: center;
         }
     }
+}
+
+.btn {
+    cursor: pointer;
 }
